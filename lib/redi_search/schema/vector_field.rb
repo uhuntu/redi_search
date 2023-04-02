@@ -85,7 +85,14 @@ module RediSearch
 
       private
 
-      attr_reader :sortable, 
+      attr_reader :algorithm,
+                  :count
+                  :type
+                  :dim
+                  :distance_metric
+                  :initial_cap,
+                  :block_size,
+                  :sortable, 
                   :no_index
 
       def boolean_options

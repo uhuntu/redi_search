@@ -38,6 +38,8 @@ module RediSearch
     end
 
     def send_command(command, *params)
+      # puts command
+      # puts params
       if pipeline
         Response.new(pipeline.call(command, *params))
       else

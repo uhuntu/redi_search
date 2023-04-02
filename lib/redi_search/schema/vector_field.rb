@@ -86,10 +86,10 @@ module RediSearch
       private
 
       attr_reader :algorithm,
-                  :count
-                  :type
-                  :dim
-                  :distance_metric
+                  :count,
+                  :type,
+                  :dim,
+                  :distance_metric,
                   :initial_cap,
                   :block_size,
                   :sortable, 

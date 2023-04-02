@@ -72,7 +72,7 @@ module RediSearch
 
       def to_a
         query = [name.to_s, "VECTOR"]
-        query += [algorithm, count]
+        query += ["FLAT", count]
         query += ["TYPE", type] if type
         query += ["DIM", dim] if dim
         query += ["DISTANCE_METRIC", distance_metric] if distance_metric

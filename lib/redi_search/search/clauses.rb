@@ -31,6 +31,10 @@ module RediSearch
         add_to_clauses(Return.new(fields: fields))
       end
 
+      def params(*fields)
+        add_to_clauses(Params.new(fields: fields))
+      end
+
       def highlight(fields: [], opening_tag: "<b>", closing_tag: "</b>")
         add_to_clauses(Highlight.new(
           fields: fields, opening_tag: opening_tag, closing_tag: closing_tag

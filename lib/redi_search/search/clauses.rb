@@ -45,6 +45,10 @@ module RediSearch
         add_to_clauses(Slop.new(slop: slop))
       end
 
+      def dialect(dialect)
+        add_to_clauses(Dialect.new(dialect: dialect))
+      end
+
       def timeout(timeout)
         add_to_clauses(Timeout.new(timeout: timeout))
       end

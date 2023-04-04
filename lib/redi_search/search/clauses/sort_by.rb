@@ -6,7 +6,7 @@ module RediSearch
       class SortBy < ApplicationClause
         clause_term :field, presence: true
         clause_term :order, presence: true, inclusion: { within: %i(asc desc) }
-        clause_order 21
+        clause_order 20
 
         def initialize(field:, order: :asc)
           @field = field

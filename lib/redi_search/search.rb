@@ -20,7 +20,7 @@ module RediSearch
     end
 
     def results
-      if model
+      if model # that is working with rails models ?
         no_content unless loaded?
 
         model.where(id: to_a.map(&:document_id_without_index))
@@ -44,6 +44,9 @@ module RediSearch
     attr_writer :index, :clauses
 
     def command
+      puts index.name
+      puts query.to_s
+      puts clauses.to_s
       ["SEARCH", index.name, query.to_s,
        *clauses.sort_by(&:clause_order).flat_map(&:clause)]
     end

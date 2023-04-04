@@ -44,9 +44,6 @@ module RediSearch
     attr_writer :index, :clauses
 
     def command
-      puts index.name
-      puts query.to_s
-      puts clauses.to_s
       ["SEARCH", index.name, query.to_s,
        *clauses.sort_by(&:clause_order).flat_map(&:clause)]
     end
